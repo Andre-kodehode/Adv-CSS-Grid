@@ -25,9 +25,9 @@
   color: var(--Primary-purple50);
 }
 
-body {
-  padding: auto 0;
-  background-color: var(--Neutral-white);
+section {
+  padding: 250px;
+  background-color: var(--Grey100);
 }
 
 /* All classes:
@@ -41,27 +41,18 @@ body {
       kira
 */
 
-.testimonals {
-  /* display: grid;
-  grid-template-rows: 5fr 4fr;
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-template-areas: "daniel jonathan kira" "jeanette patrick kira";
-  gap: 25px; */
+.testimonials {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 20px;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-/* 
-    Daniel - Jonathan   (Kira)
-    Jeanette - Patrick (Kira)
-*/
-
-.testimonal-card {
-  border-radius: 25px;
+.testimonial-card {
+  border-radius: 20px;
   font-size: 0.85em;
-  border: 1px solid black;
+  box-shadow: 0 4px 8px var(--Grey500);
 }
 
 .info {
@@ -69,40 +60,85 @@ body {
 }
 
 .desc {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-style: normal;
   display: flex;
   align-items: center;
   font-size: 0.9em;
-  padding: 10px 0 10px 20px;
+  padding: 25px 0 0px 20px;
   gap: 10px;
 }
 
+.info > p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .desc img {
-  height: 50px;
+  height: 30px;
   border-radius: 50px;
-  border: 3px solid hsl(0, 0%, 100%);
 }
 
 .daniel {
-  grid-area: daniel;
   grid-area: 1 / 1 / 2 / 3;
+  background-color: var(--Primary-purple-500);
+  color: var(--Neutral-white);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+}
+
+.daniel img {
+  border: 1px solid var(--Neutral-white);
 }
 
 .jonathan {
-  grid-area: jonathan;
   grid-area: 1 / 3 / 2 / 4;
+  background-color: var(--Grey500);
+  color: white;
 }
 
 .kira {
-  grid-area: kira;
   grid-area: 1 / 4 / 3 / 5;
+  background-color: white;
+  color: var(--Black);
 }
 
 .jeanette {
-  grid-area: jeanette;
   grid-area: 2 / 1 / 3 / 2;
+  background-color: white;
+  color: var(--Black);
 }
 
 .patrick {
-  grid-area: patrick;
   grid-area: 2 / 2 / 3 / 4;
+  background-color: var(--Black);
+  color: var(--Grey100);
+}
+
+.patrick img {
+  border: 2px solid var(--Primary-purple-500);
+}
+
+@media (max-width: 800px) {
+  .testimonials {
+    grid-template-columns: 1fr; 
+    grid-template-rows: none;  
+  }
+  section {
+    padding: 50px;
+    background-color: var(--Neutral-white);
+  }
+
+  .daniel,
+  .jonathan,
+  .kira,
+  .jeanette,
+  .patrick {
+    grid-area: auto;
+  }
+
+  .testimonials > .testimonial-card {
+    margin-bottom: 20px;
+  }
 }
